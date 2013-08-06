@@ -93,7 +93,7 @@ namespace SearchAndReplace
 			
 			if (textToFind != null && textToFind.Length > 0) {
 				SearchOptions.CurrentFindPattern = textToFind;
-				if (SearchOptions.DocumentIteratorType == DocumentIteratorType.CurrentSelection) {
+				if (SDLite.UpdateInfo.UseCtrlF3ToSearchInCurrentDocument || SearchOptions.DocumentIteratorType == DocumentIteratorType.CurrentSelection) {
 					SearchOptions.DocumentIteratorType = DocumentIteratorType.CurrentDocument;
 				}
 				SearchReplaceManager.FindNext(null);

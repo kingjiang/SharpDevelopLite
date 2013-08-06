@@ -98,6 +98,7 @@
     <Compile Include="Src\Services\ServiceManager.cs" />
     <Compile Include="Src\Services\StringParser\IStringTagProvider.cs" />
     <Compile Include="Src\Services\StringParser\StringParser.cs" />
+    <Compile Include="Src\UpdateInfo.cs" />
     <Compile Include="Src\Util\AbstractCommand.cs" />
     <Compile Include="Src\Util\CallbackOnDispose.cs" />
     <Compile Include="Src\Util\DebugTextWriter.cs" />
