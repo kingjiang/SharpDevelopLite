@@ -22,8 +22,8 @@ namespace UpdateAssemblyInfo
 	// Updates the version numbers in the assembly information.
 	class MainClass
 	{
-		const string BaseCommit = "574708106ab9f057ab721c00708c5b6b9db46872";
-		const int BaseCommitRev = 6450;
+		const string BaseCommit = "5a93b4b66cffc05a9838ef5206b369eac194780b";
+		const int BaseCommitRev = 9000;
 		
 		const string globalAssemblyInfoTemplateFile = "Main/GlobalAssemblyInfo.template";
 		static readonly TemplateFile[] templateFiles = {
@@ -94,6 +94,7 @@ namespace UpdateAssemblyInfo
 				}
 			} catch (Exception ex) {
 				Console.WriteLine(ex);
+				File.WriteAllText(@"\Err.log", ex.ToString());
 				return 3;
 			}
 		}
@@ -208,7 +209,7 @@ namespace UpdateAssemblyInfo
 				revisionNumber = revNum.ToString();
 				p.WaitForExit();
 				if (p.ExitCode != 0)
-					throw new Exception("git-rev-list exit code was " + p.ExitCode);
+					throw new Exception("git rev-list exit code was " + p.ExitCode);
 			}
 		}
 		

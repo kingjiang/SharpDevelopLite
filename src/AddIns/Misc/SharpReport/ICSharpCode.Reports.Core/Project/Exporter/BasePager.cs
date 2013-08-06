@@ -93,7 +93,7 @@ namespace ICSharpCode.Reports.Core.Exporter
 		
 		protected ExporterCollection ConvertSection (BaseSection section,int dataRow)
 		{
-			bool debugItemadded = false;
+//			bool debugItemadded = false;
 			
 			FireSectionRenderEvent (section ,dataRow);
 			
@@ -103,7 +103,7 @@ namespace ICSharpCode.Reports.Core.Exporter
 			
 			if (section.DrawBorder == true) {
 				section.Items.Insert(0,CreateDebugItem(section));
-				debugItemadded = true;
+//				debugItemadded = true;
 			}
 			
 			if (section.Items.Count > 0) {

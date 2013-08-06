@@ -20,7 +20,7 @@ using System.Reflection;
 [assembly: System.Runtime.InteropServices.ComVisible(false)]
 [assembly: AssemblyCompany("ic#code")]
 [assembly: AssemblyProduct("SharpDevelop")]
-[assembly: AssemblyCopyright("2000-2010 AlphaSierraPapa")]
+[assembly: AssemblyCopyright("2000-2013 AlphaSierraPapa")]
 [assembly: AssemblyVersion(RevisionClass.FullVersion)]
 [assembly: NeutralResourcesLanguage("en-US")]
 
@@ -29,7 +29,7 @@ internal static class RevisionClass
 	public const string Major = "3";
 	public const string Minor = "2";
 	public const string Build = "1";
-	public const string Revision = "6466";
+	public const string Revision = "9016";
 	
 	public const string MainVersion = Major + "." + Minor;
 	public const string FullVersion = Major + "." + Minor + "." + Build + "." + Revision;
