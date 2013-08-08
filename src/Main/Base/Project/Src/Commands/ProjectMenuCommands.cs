@@ -132,7 +132,7 @@ namespace ICSharpCode.SharpDevelop.Project.Commands
 					const string ns = "http://schemas.microsoft.com/developer/msbuild/2003";
 					w.WriteStartElement("Project", ns);
 					w.WriteAttributeString("DefaultTargets", "Build");
-					w.WriteAttributeString("ToolsVersion", "3.5");
+					w.WriteAttributeString("ToolsVersion", SDLite.UpdateInfo.ProjectToolsVersion);
 					
 					w.WriteStartElement("PropertyGroup", ns);
 					w.WriteComment("The configuration and platform will be used to determine which\n" +

@@ -63,6 +63,7 @@
     <Compile Include="Interprocess\PacketReceiver.cs" />
     <Compile Include="Interprocess\PacketSender.cs" />
     <Compile Include="Interprocess\WorkerProcess.cs" />
+    <Compile Include="MSBuild\MSBuild40.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="WorkerManager.cs" />
     <None Include="app.config" />
@@ -70,5 +71,10 @@
   <ItemGroup>
     <Folder Include="Configuration" />
     <Folder Include="Interprocess" />
+    <Folder Include="MSBuild" />
+    <ProjectReference Include="..\Core\Project\ICSharpCode.Core.csproj">
+      <Project>{35CEF10F-2D4C-45F2-9DD1-161E0FEC583C}</Project>
+      <Name>ICSharpCode.Core</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

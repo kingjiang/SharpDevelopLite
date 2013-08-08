@@ -18,6 +18,8 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <OutputPath>..\..\..\..\..\..\AddIns\AddIns\BackendBindings\BooBinding\</OutputPath>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\kjiang\AppData\Roaming\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <Optimize>False</Optimize>
@@ -167,4 +169,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <Import Project="PostBuildEvent.proj" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /s /r /y /z "..\..\..\..\Src\AddIns\BackendBindings\Boo\RequiredLibraries\v4.0\*.*" "v4.0\"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

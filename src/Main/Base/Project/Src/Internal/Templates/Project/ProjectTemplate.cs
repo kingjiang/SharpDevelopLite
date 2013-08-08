@@ -30,9 +30,10 @@ namespace ICSharpCode.SharpDevelop.Internal.Templates
 		public readonly static TargetFramework CF = new TargetFramework("CF", null);
 		public readonly static TargetFramework CF20 = new TargetFramework("CF 2.0", "Compact Framework 2.0") { BasedOn = CF };
 		public readonly static TargetFramework CF35 = new TargetFramework("CF 3.5", "Compact Framework 3.5") { BasedOn = CF20 };
+		public readonly static TargetFramework Net40 = new TargetFramework("v4.0", ".NET Framework 4.0") { BasedOn = Net35 };
 		
 		public readonly static TargetFramework[] TargetFrameworks = {
-			Net35, Net30, Net20,
+			Net40, Net35, Net30, Net20,
 			CF, CF35, CF20
 		};
 		

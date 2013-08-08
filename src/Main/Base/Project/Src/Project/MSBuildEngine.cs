@@ -234,13 +234,21 @@ namespace ICSharpCode.SharpDevelop.Project
 			if (AllowBuildInProcess && Interlocked.CompareExchange(ref isBuildingInProcess, 1, 0) == 0) {
 				buildInProcess = true;
 			}
+			
+			//HACK: Build .net 4.0 projects in process
+			if (SDLite.BuildHelper.IsProject40(File.ReadAllText(project.FileName))) {
+				buildInProcess = true;
+				Interlocked.Exchange(ref isBuildingInProcess, 1);
+			}			
+						
 			LoggingService.Info("Start job (buildInProcess=" + buildInProcess + "): " + job.ToString());
 			
 			if (buildInProcess) {
 				settings.BuildDoneCallback = delegate(bool success) {
 					LoggingService.Debug("BuildInProcess: Received BuildDoneCallback");
 					if (Interlocked.Exchange(ref isBuildingInProcess, 0) != 1) {
-						MessageService.ShowError("isBuildingInProcess should have been 1!");
+					    //HACK: It takes no sense.
+						//MessageService.ShowError("isBuildingInProcess should have been 1!");
 					}
 					logger.FlushCurrentError();
 					feedbackSink.Done(success);

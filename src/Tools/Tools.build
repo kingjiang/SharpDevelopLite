@@ -9,6 +9,7 @@
 		<HelpToolFiles Include="Help\*"/>
 		<PartCoverFiles Include="PartCover\*"/>
 		<PartCoverXsltFiles Include="PartCover\xslt\*"/>
+        <FrameworkFiles Include="Frameworks\bin\*.dll"/>
 	</ItemGroup>
 	
 	<Target Name="Build">
@@ -21,6 +22,7 @@
 		<Copy SourceFiles="@(ToolFiles)" DestinationFolder="..\..\bin\Tools" SkipUnchangedFiles="true"/>
 		<Copy SourceFiles="@(PartCoverFiles)" DestinationFolder="..\..\bin\Tools\PartCover" SkipUnchangedFiles="true"/>
 		<Copy SourceFiles="@(PartCoverXsltFiles)" DestinationFolder="..\..\bin\Tools\PartCover\Xslt" SkipUnchangedFiles="true"/>
+	    <Copy SourceFiles="@(FrameworkFiles)" DestinationFolder="..\..\bin\Tools\Frameworks" SkipUnchangedFiles="true"/>
 		
 		<!--
 		<MSBuild Projects="@(ToolProject)" Targets="Build">

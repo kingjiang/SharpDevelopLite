@@ -36,7 +36,8 @@ namespace ICSharpCode.Core
             try {
                 // This handler is called only when the common language runtime tries to bind to the assembly and fails.
                 // Retrieve the assembly in addin directoriess
-                string assemblyName = args.Name.Substring(0, args.Name.IndexOf(","));
+                int index = args.Name.IndexOf(",");
+                string assemblyName = index >= 0 ? args.Name.Substring(0, index) : args.Name;
                 Assembly assembly = null;
                 string path = null;
                 
